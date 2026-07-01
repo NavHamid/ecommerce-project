@@ -1,12 +1,32 @@
-
-
 .app-container {
-  max-width: 600px;
-  margin: 0 auto;
-
-  height: 100vh;
+  width: min(920px, calc(100vw - 32px));
+  height: min(920px, calc(100vh - 32px));
+  margin: 16px auto;
   display: flex;
   flex-direction: column;
+  padding: 18px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.85),
+      rgba(248, 249, 252, 0.76)
+    ),
+    linear-gradient(135deg, rgba(14, 24, 45, 0.06), rgba(107, 114, 255, 0.08));
+  box-shadow:
+    0 24px 60px rgba(15, 23, 42, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(18px);
+  overflow: hidden;
 }
 
-
+@media (max-width: 640px) {
+  .app-container {
+    width: calc(100vw - 16px);
+    height: calc(100vh - 16px);
+    margin: 8px auto;
+    padding: 12px;
+    border-radius: 22px;
+  }
+}
