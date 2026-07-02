@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import formatMoney from "../../utils/money";
+import imagePath from "../../utils/imagePath";
 
 export default function Product({ product, loadCart }) {
     const [quantity, setQuantity] = useState(1);
@@ -20,11 +21,11 @@ export default function Product({ product, loadCart }) {
 
     return (
         <div className="product-container"
-        data-testid="product-container">
+            data-testid="product-container">
             <div className="product-image-container">
                 <img className="product-image"
                     data-testid="product-image"
-                    src={product.image} />
+                    src={imagePath(product.image)} />
             </div>
 
             <div className="product-name limit-text-to-2-lines">
@@ -34,7 +35,7 @@ export default function Product({ product, loadCart }) {
             <div className="product-rating-container">
                 <img className="product-rating-stars"
                     data-testid="product-rating-stars-image"
-                    src={`images/ratings/rating-${product.rating.stars * 10}.png`} />
+                    src={imagePath(`images/ratings/rating-${product.rating.stars * 10}.png`)} />
                 <div className="product-rating-count link-primary">
                     {product.rating.count}
                 </div>
@@ -62,7 +63,7 @@ export default function Product({ product, loadCart }) {
             <div className="product-spacer"></div>
 
             <div className="added-to-cart">
-                <img src="images/icons/checkmark.png" />
+                <img src={imagePath("images/icons/checkmark.png")} />
                 Added
             </div>
 

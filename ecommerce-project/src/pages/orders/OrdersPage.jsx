@@ -3,6 +3,7 @@ import dayjs from "dayjs";
 import { useEffect, useState, Fragment } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import imagePath from "../../utils/imagePath";
 import formatMoney from "../../utils/money";
 import "./OrdersPage.css";
 
@@ -54,7 +55,7 @@ export default function OrdersPage({ cart }) {
                                         return (
                                             <Fragment key={orderProduct.id}>
                                                 <div className="product-image-container">
-                                                    <img src={orderProduct.image} />
+                                                    <img src={imagePath(orderProduct.image)} />
                                                 </div>
 
                                                 <div className="product-details">
@@ -68,7 +69,7 @@ export default function OrdersPage({ cart }) {
                                                         Quantity: {orderProduct.quantity}
                                                     </div>
                                                     <button className="buy-again-button button-primary">
-                                                        <img className="buy-again-icon" src="images/icons/buy-again.png" />
+                                                        <img className="buy-again-icon" src={imagePath("images/icons/buy-again.png")} />
                                                         <span className="buy-again-message">Add to Cart</span>
                                                     </button>
                                                 </div>

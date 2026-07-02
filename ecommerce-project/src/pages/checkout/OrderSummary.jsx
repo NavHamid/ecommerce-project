@@ -3,6 +3,7 @@ import dayjs from 'dayjs';
 import axios from 'axios';
 import formatMoney from '../../utils/money.js';
 import DeliveryOptions from './DeliveryOptions.jsx';
+import imagePath from '../../utils/imagePath';
 
 
 export default function OrderSummary({ cart, deliveryOption, loadCart }) {
@@ -16,12 +17,12 @@ export default function OrderSummary({ cart, deliveryOption, loadCart }) {
                         }
                     );
                     const deleteCartItem = async () => {
-                        await axios.delete(`api/cart-items/${cartItem.productId}`);
+                        await axios.delete(`/api/cart-items/${cartItem.productId}`);
                         await loadCart();
                     }
 
                     const updateCartItem = async () => {
-                        await axios.put(`api/cart-items/${cartItem.productId}`, {
+                        await axios.put(`/api/cart-items/${cartItem.productId}`, {
                             quantity: cartItem.quantity + 1
                         });
                         await loadCart();
@@ -38,7 +39,7 @@ export default function OrderSummary({ cart, deliveryOption, loadCart }) {
                             <div className="cart-item-details-grid">
                                 <img
                                     className="product-image"
-                                    src={cartItem.product.image}
+                                    src={imagePath(cartItem.product.image)}
                                 />
 
                                 <div className="cart-item-details">

@@ -1,5 +1,6 @@
 import Logo from "../components/Logo";
 import Footer from "../components/Footer";
+import imagePath from "../utils/imagePath";
 import "../components/Header.css";
 import "./TrackingOrder.css";
 
@@ -19,7 +20,7 @@ export default function TrackingOrder() {
                     <input className="search-bar" type="text" placeholder="Search" />
 
                     <button className="search-button">
-                        <img className="search-icon" src="images/icons/search-icon.png" />
+                        <img className="search-icon" src={imagePath("images/icons/search-icon.png")} />
                     </button>
                 </div>
 
@@ -30,7 +31,7 @@ export default function TrackingOrder() {
                     </a>
 
                     <a className="cart-link header-link" href="/checkout">
-                        <img className="cart-icon" src="images/icons/cart-icon.png" />
+                        <img className="cart-icon" src={imagePath("images/icons/cart-icon.png")} />
                         <div className="cart-quantity">3</div>
                         <div className="cart-text">Cart</div>
                     </a>
@@ -55,7 +56,7 @@ export default function TrackingOrder() {
                         Quantity: 1
                     </div>
 
-                    <img className="product-image" src="images/products/athletic-cotton-socks-6-pairs.jpg" />
+                    <img className="product-image" src={imagePath("images/products/athletic-cotton-socks-6-pairs.jpg")} />
 
                     <div className="progress-labels-container">
                         <div className="progress-label">

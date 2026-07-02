@@ -4,10 +4,11 @@ import OrderSummary from './OrderSummary.jsx';
 import PaymentSummary from './PaymentSummary.jsx';
 import Logo from '../../components/Logo';
 import Footer from '../../components/Footer';
+import imagePath from '../../utils/imagePath';
 import './checkout-header.css';
 import './CheckoutPage.css';
 
-export default function CheckOutPage({ cart , loadCart }) {
+export default function CheckOutPage({ cart, loadCart }) {
     const [deliveryOption, setDeliveryOption] = useState([]);
     const [paymentSummary, setPaymentSummary] = useState([]);
 
@@ -49,7 +50,7 @@ export default function CheckOutPage({ cart , loadCart }) {
                     </div>
 
                     <div className="checkout-header-right-section">
-                        <img src="images/icons/checkout-lock-icon.png" />
+                        <img src={imagePath('images/icons/checkout-lock-icon.png')} />
                     </div>
                 </div>
             </div>

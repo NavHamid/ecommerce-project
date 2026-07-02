@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
+import imagePath from "../utils/imagePath";
 import "./header.css";
 
 export default function Header({ cart }) {
@@ -21,7 +22,7 @@ export default function Header({ cart }) {
                 <input className="search-bar" type="text" placeholder="Search" />
 
                 <button className="search-button">
-                    <img className="search-icon" src="images/icons/search-icon.png" />
+                    <img className="search-icon" src={imagePath("images/icons/search-icon.png")} />
                 </button>
             </div>
 
@@ -32,7 +33,7 @@ export default function Header({ cart }) {
                 </Link>
 
                 <Link className="cart-link header-link" to="/checkout">
-                    <img className="cart-icon" src="images/icons/cart-icon.png" />
+                    <img className="cart-icon" src={imagePath("images/icons/cart-icon.png")} />
                     <div className="cart-quantity">{totalQuantity}</div>
                     <div className="cart-text">Cart</div>
                 </Link>

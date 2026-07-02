@@ -43,10 +43,10 @@ describe('Product component', () => {
 
         expect(
             screen.getByTestId("product-image").getAttribute("src")
-        ).toBe("images/products/athletic-cotton-socks-6-pairs.jpg")
+        ).toBe("/images/products/athletic-cotton-socks-6-pairs.jpg")
         expect(
             screen.getByTestId("product-rating-stars-image").getAttribute("src")
-        ).toBe("images/ratings/rating-45.png")
+        ).toBe("/images/ratings/rating-45.png")
 
         expect(
             screen.getByText("87")
