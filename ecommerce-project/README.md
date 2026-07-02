@@ -1,8 +1,31 @@
-# React + Vite
+# Ecommerce Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the React frontend for the ecommerce project.
 
-Currently, two official plugins are available:
+## What It Does
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The frontend shows the store UI where users can:
+
+- browse products
+- search products
+- add products to the cart
+- update cart quantity and delivery options
+- place an order
+- view orders and tracking details
+
+## Main Folder
+
+- `src/` contains the pages, components, styles, utilities, and tests.
+- `public/images/` contains product, icon, and rating images.
+
+## Run It
+
+1. Open this folder in VS Code.
+2. Run `npm install`.
+3. Run `npm run dev`.
+
+## Other Useful Commands
+
+- `npm run build`
+- `npm run lint`
+

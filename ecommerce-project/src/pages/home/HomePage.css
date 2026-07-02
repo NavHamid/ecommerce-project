@@ -1,0 +1,215 @@
+.home-page {
+  margin-top: 72px;
+  padding: 24px 24px 56px;
+}
+
+.home-page .home-hero {
+  max-width: 1480px;
+  margin: 0 auto 22px;
+  padding: 30px 28px;
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(8, 79, 45, 0.96), rgba(10, 102, 66, 0.9)),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0));
+  color: white;
+  box-shadow: 0 24px 50px rgba(8, 79, 45, 0.18);
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.9fr);
+  align-items: end;
+}
+
+.home-page .home-hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 8px 12px;
+  margin-bottom: 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.home-page .home-hero h1 {
+  margin: 0;
+  max-width: 12ch;
+  font-size: clamp(34px, 4vw, 60px);
+  line-height: 0.96;
+}
+
+.home-page .home-hero-description {
+  margin-top: 14px;
+  max-width: 58ch;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.home-page .home-hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.home-page .home-hero-metrics div {
+  padding: 18px 16px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(10px);
+}
+
+.home-page .home-hero-metrics span {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.home-page .home-hero-metrics p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.home-page .products-grid {
+  max-width: 1480px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.home-page .product-container {
+  position: relative;
+  min-height: 100%;
+  padding: 22px 20px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 12px 30px rgba(11, 28, 53, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.home-page .product-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(11, 28, 53, 0.12);
+  z-index: 2;
+}
+
+.home-page .product-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 190px;
+  margin-bottom: 20px;
+  background: linear-gradient(180deg, #f8fafc, #eef4f8);
+  border-radius: 20px;
+}
+
+.home-page .product-image {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 16px;
+}
+
+.home-page .product-name {
+  min-height: 44px;
+  margin-bottom: 8px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.home-page .product-rating-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.home-page .product-rating-stars {
+  width: 100px;
+  margin-right: 8px;
+}
+
+.home-page .product-rating-count {
+  color: rgb(8, 79, 45);
+  cursor: auto;
+  margin-top: 3px;
+  font-weight: 700;
+}
+
+.home-page .product-price {
+  font-weight: 800;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.home-page .product-quantity-container {
+  margin-bottom: 16px;
+}
+
+.home-page .product-spacer {
+  flex: 1;
+}
+
+.home-page .added-to-cart {
+  color: rgb(8, 79, 45);
+  font-size: 15px;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  opacity: 0;
+}
+
+.home-page .added-to-cart img {
+  height: 18px;
+  margin-right: 6px;
+}
+
+.home-page .add-to-cart-button {
+  width: 100%;
+  padding: 10px 12px;
+  height: 40px;
+  margin-top: 1px;
+  border-radius: 999px;
+}
+
+@media (max-width: 1000px) {
+  .home-page .home-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .home-hero h1 {
+    max-width: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .home-page {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .home-page .home-hero {
+    padding: 24px 20px;
+    border-radius: 22px;
+  }
+
+  .home-page .home-hero-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
