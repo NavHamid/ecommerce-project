@@ -1,7 +1,6 @@
 import Logo from "../components/Logo";
 import Footer from "../components/Footer";
 import imagePath from "../utils/imagePath";
-import "../components/header.css";
 import "./TrackingOrder.css";
 
 
