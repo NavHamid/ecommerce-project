@@ -53,14 +53,14 @@ export default function OrdersPage({ cart }) {
                                 <div className="order-details-grid">
                                     {order.products.map((orderProduct) => {
                                         return (
-                                            <Fragment key={orderProduct.id}>
+                                            <Fragment key={orderProduct.productId}>
                                                 <div className="product-image-container">
-                                                    <img src={imagePath(orderProduct.image)} />
+                                                    <img src={imagePath(orderProduct.product?.image || '')} alt={orderProduct.product?.name} />
                                                 </div>
 
                                                 <div className="product-details">
                                                     <div className="product-name">
-                                                        {orderProduct.name}
+                                                        {orderProduct.product?.name}
                                                     </div>
                                                     <div className="product-delivery-date">
                                                         Arriving on: {dayjs(orderProduct.estimatedDeliveryTimeMs).format('MMMM D')}
@@ -69,7 +69,7 @@ export default function OrdersPage({ cart }) {
                                                         Quantity: {orderProduct.quantity}
                                                     </div>
                                                     <button className="buy-again-button button-primary">
-                                                        <img className="buy-again-icon" src={imagePath("images/icons/buy-again.png")} />
+                                                        <img className="buy-again-icon" src={imagePath("images/icons/buy-again.png")} alt="Buy Again" />
                                                         <span className="buy-again-message">Add to Cart</span>
                                                     </button>
                                                 </div>
@@ -81,7 +81,7 @@ export default function OrdersPage({ cart }) {
                                                         </button>
                                                     </a>
                                                 </div>
-                                            </ Fragment>
+                                            </Fragment>
 
                                         )
                                     })}

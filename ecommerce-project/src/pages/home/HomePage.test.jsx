@@ -1,6 +1,5 @@
 // @vitest-environment jsdom
 
-import React from 'react';
 import axios from 'axios';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, within } from '@testing-library/react';
@@ -9,6 +8,9 @@ import HomePage from './HomePage';
 vi.mock('axios');
 vi.mock('../../components/Header', () => ({
     default: () => <div data-testid="header" />,
+}));
+vi.mock('../../components/Footer', () => ({
+    default: () => <div data-testid="footer" />,
 }));
 
 describe('HomePage component', () => {

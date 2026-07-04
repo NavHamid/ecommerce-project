@@ -69,7 +69,7 @@
 }
 
 .checkout-page .delivery-date {
-  color: rgb(25, 135, 84);
+  color: #059669;
   font-weight: 700;
   font-size: 19px;
   margin-top: 5px;
@@ -115,7 +115,9 @@
 }
 
 .checkout-page .product-quantity .link-primary {
-  margin-left: 3px;
+  margin-left: 10px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 @media (max-width: 1000px) {
@@ -190,7 +192,7 @@
 }
 
 .checkout-page .total-row {
-  color: rgb(25, 135, 84);
+  color: #059669;
   font-weight: 700;
   font-size: 18px;
 
