@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
 import imagePath from "../utils/imagePath";
-import "./Header.css";
+import "./header.css";
 
 export default function Header({ cart }) {
     let totalQuantity = 0;
