@@ -141,10 +141,4 @@ npx vitest
 
 ## 🙏 Acknowledgements
 
-This project was built as part of my learning journey by following the excellent React course created by **SuperSimpleDev**.
-
-While the project has been customized and extended as I learned, I would like to thank **SuperSimpleDev** for the tutorials, explanations, and project guidance that helped me build and understand this application.
-
-- 📺 YouTube: https://www.youtube.com/@SuperSimpleDev
-- 🌐 Website: https://supersimple.dev/
-
+Special thanks to **SuperSimpleDev** for the excellent React course and guidance that inspired and supported the development of this project.
