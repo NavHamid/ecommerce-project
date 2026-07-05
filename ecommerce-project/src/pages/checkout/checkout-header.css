@@ -2,7 +2,9 @@
   height: 60px;
   padding-left: 30px;
   padding-right: 30px;
-  background-color: white;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 2px 5px rgba(15, 23, 42, 0.03);
 
   display: flex;
   justify-content: center;
@@ -26,31 +28,9 @@
   width: 200px;
 }
 
-.checkout-header .logo {
-  height: 26px;
-  margin-top: 0px;
-}
-
-.checkout-header .mobile-logo {
-  display: none;
-}
-
-/* @media is used to create responsive design (making the
-   website look good on any screen size). This @media
-   means when the screen width is 575px or less, different
-   styles (inside the {...}) will be applied. */
 @media (max-width: 575px) {
   .checkout-header .checkout-header-left-section {
     width: auto;
-  }
-
-  .checkout-header .logo {
-    display: none;
-  }
-
-  .checkout-header .mobile-logo {
-    display: inline-block;
-    height: 26px;
   }
 }
 
@@ -67,10 +47,15 @@
 }
 
 .checkout-header .return-to-home-link {
-  color: #059669;
+  color: var(--color-accent);
 
   text-decoration: none;
   cursor: pointer;
+}
+
+.checkout-header .return-to-home-link:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
 }
 
 @media (max-width: 1000px) {

@@ -1,70 +1,66 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import OrderSummary from './OrderSummary.jsx';
-import PaymentSummary from './PaymentSummary.jsx';
-import Logo from '../../components/Logo';
-import Footer from '../../components/Footer';
-import imagePath from '../../utils/imagePath';
+import { OrderSummary } from './OrderSummary';
+import { PaymentSummary } from './PaymentSummary';
+import { BrandLogo } from '../../components/BrandLogo';
 import './checkout-header.css';
 import './CheckoutPage.css';
 
-export default function CheckOutPage({ cart, loadCart }) {
-    const [deliveryOption, setDeliveryOption] = useState([]);
-    const [paymentSummary, setPaymentSummary] = useState([]);
+export function CheckoutPage({ cart = [], loadCart }) {
+  const [deliveryOptions, setDeliveryOptions] = useState([]);
+  const [paymentSummary, setPaymentSummary] = useState(null);
 
+  useEffect(() => {
+    const fetchCheckoutData = async () => {
+      let response = await axios.get(
+        '/api/delivery-options?expand=estimatedDeliveryTime'
+      );
+      setDeliveryOptions(response.data);
 
+      response = await axios.get('/api/payment-summary');
+      setPaymentSummary(response.data);
+    };
 
-    useEffect(() => {
-        const fetchCheckoutData = async () => {
-            let response = await axios.get(
-                "/api/delivery-options?expand=estimatedDeliveryTime"
-            );
-            setDeliveryOption(response.data);
+    fetchCheckoutData();
+  }, [cart]);
 
-            response = await axios.get("/api/payment-summary");
-            setPaymentSummary(response.data);
-        };
+  let totalQuantity = 0;
+  cart.forEach((cartItem) => {
+    totalQuantity += cartItem.quantity;
+  });
 
-        fetchCheckoutData();
-    }, [cart]);
+  return (
+    <>
+      <title>Checkout</title>
 
+      <div className="checkout-header">
+        <div className="header-content">
+          <div className="checkout-header-left-section">
+            <a href="/" style={{ textDecoration: 'none' }}>
+              <BrandLogo theme="light" />
+            </a>
+          </div>
 
+          <div className="checkout-header-middle-section">
+            Checkout (<a className="return-to-home-link"
+              href="/">{totalQuantity} {totalQuantity === 1 ? 'item' : 'items'}</a>)
+          </div>
 
-    return (
-        <>
-            <title>Checkout | Aura Select</title>
-            <div className="checkout-header">
-                <div className="header-content">
-                    <div className="checkout-header-left-section">
-                        <a href="/" style={{ textDecoration: 'none' }}>
-                            <Logo light={false} />
-                        </a>
-                    </div>
+          <div className="checkout-header-right-section">
+            <img src="/images/icons/checkout-lock-icon.png" />
+          </div>
+        </div>
+      </div>
 
-                    <div className="checkout-header-middle-section">
-                        Checkout (
-                        <a className="return-to-home-link" href="/">
-                            3 items
-                        </a>
-                        )
-                    </div>
+      <div className="checkout-page">
+        <div className="page-title">Review your order</div>
 
-                    <div className="checkout-header-right-section">
-                        <img src={imagePath('images/icons/checkout-lock-icon.png')} />
-                    </div>
-                </div>
-            </div>
+        <div className="checkout-grid">
+          <OrderSummary cart={cart} deliveryOptions={deliveryOptions} loadCart={loadCart} />
 
-            <div className="checkout-page">
-                <div className="page-title">Review your order</div>
-
-                <div className="checkout-grid">
-                    <OrderSummary cart={cart} deliveryOption={deliveryOption} loadCart={loadCart} />
-
-                    <PaymentSummary paymentSummary={paymentSummary} loadCart={loadCart} />
-                </div>
-            </div>
-            <Footer />
-        </>
-    );
+          <PaymentSummary paymentSummary={paymentSummary} loadCart={loadCart} />
+        </div>
+      </div>
+    </>
+  );
 }

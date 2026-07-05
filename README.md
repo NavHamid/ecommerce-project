@@ -1,155 +1,150 @@
-# 🛒 Full-Stack Ecommerce Project
+# 🛒 Full-Stack E-Commerce Platform
 
-A full-stack ecommerce web application built while learning full-stack development from SuperSimpleDev. The project is divided into a **React frontend** and a **Node.js + Express backend**, communicating through REST APIs to simulate a real-world online shopping experience.
+A modern full-stack e-commerce application built with **React, Node.js, Express, and Sequelize**. Users can browse products, manage a shopping cart, place orders, and track purchases through a responsive interface.
 
----
+## 🚀 Features
 
-## 📂 Project Structure
-
-```text
-.
-├── ecommerce-project/      # React Frontend
-└── ecommerce-backend/      # Node.js + Express Backend
-```
-
-### Frontend (`ecommerce-project/`)
-
-Built with **React**, the frontend provides a responsive shopping experience with:
-
-* 🏠 Home page with product catalog
-* 🔍 Product search functionality
-* 🛒 Shopping cart management
-* ✏️ Update item quantities
-* 🚚 Select delivery options
-* 💳 Checkout process
-* 📦 Order history
-* 📍 Order tracking
-* ✅ Unit and component tests
-
----
-
-### Backend (`ecommerce-backend/`)
-
-Built with **Node.js** and **Express**, the backend provides REST APIs for:
-
-* Products
-* Shopping cart
-* Orders
-* Delivery options
-
-It also includes:
-
-* Model files
-* Sample JSON data
-* API routes
-* Express server configuration
-
----
-
-## ✨ Features
-
-* Browse products
-* Search for products
-* Add products to the cart
-* Update cart quantities
-* Choose delivery options
-* Complete the checkout process
-* View previous orders
-* Track order status
-* Frontend and backend integration using REST APIs
+- Browse and search products
+- Add, update, and remove cart items
+- Dynamic payment summary
+- Order placement and order history
+- Delivery option selection
+- Responsive design
+- RESTful API integration
+- Component and unit testing with Vitest
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-
-* React
-* JavaScript (ES6+)
-* HTML5
-* CSS3
-* Axios
+- React 19
+- React Router
+- Axios
+- Vite
+- CSS3
 
 ### Backend
-
-* Node.js
-* Express.js
-* REST API
+- Node.js
+- Express.js
+- Sequelize ORM
+- SQLite
 
 ### Testing
-
-* Vitest
-* React Testing Library
+- Vitest
+- React Testing Library
 
 ---
 
-## 🚀 Getting Started
+## 📁 Project Structure
 
-### 1. Clone the repository
+```
+react-course/
+│
+├── ecommerce-project/      # React Frontend
+└── ecommerce-backend/      # Express Backend
+```
+
+---
+
+## ⚙️ Installation
+
+### Clone the repository
 
 ```bash
 git clone <repository-url>
+cd react-course
 ```
 
-### 2. Install dependencies
+### Install dependencies
 
-Install packages in both folders:
+Frontend
 
 ```bash
 cd ecommerce-project
 npm install
 ```
 
-```bash
-cd ../ecommerce-backend
-npm install
-```
-
-### 3. Start the backend
+Backend
 
 ```bash
 cd ecommerce-backend
-npm start
+npm install
 ```
 
-### 4. Start the frontend
+---
+
+## ▶️ Run the Application
+
+### Start Backend
+
+```bash
+cd ecommerce-backend
+npm run dev
+```
+
+Runs on:
+
+```
+http://localhost:3000
+```
+
+### Start Frontend
 
 ```bash
 cd ecommerce-project
 npm run dev
 ```
 
-The frontend will connect to the backend API, allowing you to explore the complete ecommerce workflow.
+Runs on:
+
+```
+http://localhost:5173
+```
 
 ---
 
-## 🎯 Learning Objectives
+## 🧪 Run Tests
 
-This project was built as part of my full-stack development learning journey using the SuperSimpleDev course. It helped me gain practical experience with:
-
-* React component architecture
-* State management
-* REST API integration
-* Express.js server development
-* CRUD operations
-* Testing React applications
-* Building a complete full-stack application
+```bash
+cd ecommerce-project
+npx vitest
+```
 
 ---
 
-## 📌 Future Improvements
+## 📌 API Endpoints
 
-* User authentication
-* Payment gateway integration
-* Admin dashboard
-* Product reviews and ratings
-* Wishlist functionality
-* Responsive design improvements
-* Database integration (MongoDB/PostgreSQL)
-* Deployment with Render and Vercel
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/products` | Get products |
+| GET | `/api/cart-items` | Get cart |
+| POST | `/api/cart-items` | Add item to cart |
+| PUT | `/api/cart-items/:id` | Update cart item |
+| DELETE | `/api/cart-items/:id` | Remove cart item |
+| GET | `/api/orders` | Get orders |
+| POST | `/api/orders` | Place order |
+| GET | `/api/payment-summary` | Payment summary |
 
 ---
+
+## 🎯 Future Improvements
+
+- User Authentication (JWT)
+- Stripe Payment Integration
+- MongoDB/PostgreSQL Support
+- Admin Dashboard
+- Product Reviews & Ratings
+
+---
+
 
 ## 🙏 Acknowledgements
 
-This project was built while learning full-stack development through the **SuperSimpleDev** course. It has been a valuable hands-on project for understanding how frontend and backend applications work together in a real-world ecommerce environment.
+This project was built as part of my learning journey by following the excellent React course created by **SuperSimpleDev**.
+
+While the project has been customized and extended as I learned, I would like to thank **SuperSimpleDev** for the tutorials, explanations, and project guidance that helped me build and understand this application.
+
+- 📺 YouTube: https://www.youtube.com/@SuperSimpleDev
+- 🌐 Website: https://supersimple.dev/
+

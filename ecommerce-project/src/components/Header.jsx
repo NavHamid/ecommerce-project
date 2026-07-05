@@ -1,9 +1,8 @@
-import { Link } from "react-router-dom";
-import Logo from "./Logo";
-import imagePath from "../utils/imagePath";
-import "./Header.css";
+import { Link } from 'react-router';
+import { BrandLogo } from './BrandLogo';
+import './Header.css';
 
-export default function Header({ cart }) {
+export function Header({ cart = [] }) {
     let totalQuantity = 0;
 
     cart.forEach((cartItem) => {
@@ -13,8 +12,8 @@ export default function Header({ cart }) {
     return (
         <div className="header">
             <div className="left-section">
-                <Link to="/" className="header-link">
-                    <Logo light={true} />
+                <Link to="/" className="header-link brand-logo-link">
+                    <BrandLogo theme="dark" />
                 </Link>
             </div>
 
@@ -22,7 +21,7 @@ export default function Header({ cart }) {
                 <input className="search-bar" type="text" placeholder="Search" />
 
                 <button className="search-button">
-                    <img className="search-icon" src={imagePath("images/icons/search-icon.png")} />
+                    <img className="search-icon" src="/images/icons/search-icon.png" />
                 </button>
             </div>
 
@@ -33,11 +32,11 @@ export default function Header({ cart }) {
                 </Link>
 
                 <Link className="cart-link header-link" to="/checkout">
-                    <img className="cart-icon" src={imagePath("images/icons/cart-icon.png")} />
+                    <img className="cart-icon" src="/images/icons/cart-icon.png" />
                     <div className="cart-quantity">{totalQuantity}</div>
                     <div className="cart-text">Cart</div>
                 </Link>
             </div>
         </div>
-    )
+    );
 }

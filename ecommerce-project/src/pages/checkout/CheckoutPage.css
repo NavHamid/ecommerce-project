@@ -69,7 +69,7 @@
 }
 
 .checkout-page .delivery-date {
-  color: #059669;
+  color: var(--color-success);
   font-weight: 700;
   font-size: 19px;
   margin-top: 5px;
@@ -110,14 +110,13 @@
 }
 
 .checkout-page .product-price {
+
   font-weight: 700;
   margin-bottom: 5px;
 }
 
 .checkout-page .product-quantity .link-primary {
-  margin-left: 10px;
-  cursor: pointer;
-  margin-right: 10px;
+  margin-left: 3px;
 }
 
 @media (max-width: 1000px) {
@@ -153,6 +152,7 @@
 }
 
 .checkout-page .delivery-option-date {
+
   font-weight: 500;
   margin-bottom: 3px;
 }
@@ -192,11 +192,11 @@
 }
 
 .checkout-page .total-row {
-  color: #059669;
+  color: var(--color-text);
   font-weight: 700;
   font-size: 18px;
 
-  border-top: 1px solid rgb(222, 222, 222);
+  border-top: 1px solid var(--color-border);
   padding-top: 18px;
 }
 
@@ -209,3 +209,98 @@
   margin-top: 20px;
   margin-bottom: 19px;
 }
+
+/* Promo Code Styles */
+.checkout-page .promo-discount-label {
+  color: var(--color-danger);
+}
+
+.checkout-page .promo-discount-amount {
+  color: var(--color-danger);
+  text-align: right;
+  font-weight: 500;
+}
+
+.checkout-page .promo-code-container {
+  margin-top: 15px;
+  border-top: 1px dashed var(--color-border);
+  padding-top: 15px;
+}
+
+.checkout-page .promo-code-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.checkout-page .promo-code-input {
+  flex: 1;
+  font-size: 14px;
+  padding: 6px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  text-transform: uppercase;
+}
+
+.checkout-page .promo-code-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.checkout-page .promo-btn {
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.checkout-page .apply-btn {
+  background-color: var(--color-accent-light);
+  color: var(--color-accent-hover);
+}
+
+.checkout-page .apply-btn:hover {
+  background-color: #dbeafe; /* lighter blue/indigo hover */
+}
+
+.checkout-page .remove-btn {
+  background-color: var(--color-danger-bg);
+  color: var(--color-danger);
+}
+
+.checkout-page .remove-btn:hover {
+  background-color: #fca5a5;
+}
+
+.checkout-page .promo-feedback-msg {
+  font-size: 12.5px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.checkout-page .promo-feedback-msg.success {
+  color: var(--color-success);
+}
+
+.checkout-page .promo-feedback-msg.error {
+  color: var(--color-danger);
+}
+
+/* Quantity Editor Styles */
+.checkout-page .quantity-input {
+  width: 45px;
+  padding: 2px 5px;
+  font-size: 14px;
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 3px;
+  margin-right: 5px;
+}
+
+.checkout-page .save-quantity-link,
+.checkout-page .cancel-quantity-link {
+  margin-left: 8px;
+}
+

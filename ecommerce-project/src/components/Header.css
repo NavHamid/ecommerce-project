@@ -1,12 +1,8 @@
 .header {
-  background: linear-gradient(
-    135deg,
-    rgba(6, 78, 59, 0.98),
-    rgba(2, 44, 34, 0.98)
-  );
+  background-color: rgb(8, 79, 45);
   color: white;
-  padding-left: 18px;
-  padding-right: 18px;
+  padding-left: 15px;
+  padding-right: 15px;
 
   display: flex;
   align-items: center;
@@ -16,10 +12,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 72px;
-  z-index: 1000;
-  box-shadow: 0 14px 34px rgba(2, 44, 34, 0.2);
-  backdrop-filter: blur(12px);
+  height: 60px;
 }
 
 .header .left-section {
@@ -33,51 +26,30 @@
 }
 
 .header .header-link {
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 12px;
-  border-radius: 14px;
+  display: inline-block;
+  padding: 6px 9.5px;
+  border-radius: 2px;
   cursor: pointer;
   text-decoration: none;
   border: 1px solid rgba(0, 0, 0, 0);
-  transition:
-    transform 140ms ease,
-    background-color 140ms ease,
-    border-color 140ms ease;
 }
 
 .header .header-link:hover {
-  border-color: rgba(255, 255, 255, 0.28);
-  background-color: rgba(255, 255, 255, 0.08);
-  transform: translateY(-1px);
+  border: 1px solid white;
 }
 
-.header .logo {
-  height: 28px;
-  margin-top: 1px;
-}
-
-.header .mobile-logo {
-  display: none;
-}
-
-@media (max-width: 675px) {
-  .header .logo {
-    display: none;
-  }
-
-  .header .mobile-logo {
-    display: block;
-    height: 26px;
-    margin-top: 1px;
-  }
+.header .brand-logo-link {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 4px;
 }
 
 .header .middle-section {
   flex: 1;
   max-width: 850px;
-  margin-left: 14px;
-  margin-right: 14px;
+  margin-left: 10px;
+  margin-right: 10px;
   display: flex;
 }
 
@@ -85,65 +57,36 @@
   flex: 1;
   width: 0;
   font-size: 16px;
-  height: 44px;
-  padding-left: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-right: none;
-  border-top-left-radius: 999px;
-  border-bottom-left-radius: 999px;
+  height: 38px;
+  padding-left: 15px;
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  background-color: rgba(255, 255, 255, 0.95);
-  transition: box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
-  box-sizing: border-box;
-}
-
-.header .search-bar:focus {
-  outline: none;
-  background-color: #ffffff;
-  border-color: #2dd4bf;
-  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.35);
 }
 
 .header .search-button {
-  background: linear-gradient(135deg, #2dd4bf, #0d9488);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-left: none;
-  width: 52px;
-  height: 44px;
-  border-top-right-radius: 999px;
-  border-bottom-right-radius: 999px;
+  background-color: rgb(186, 255, 190);
+  border: none;
+  width: 45px;
+  height: 40px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-  box-shadow: 0 6px 14px rgba(13, 148, 136, 0.2);
-  box-sizing: border-box;
-}
-
-.header .search-button:hover {
-  opacity: 0.9;
-  transform: scale(1.02);
-}
-
-.header .search-button:active {
-  transform: scale(0.98);
 }
 
 .header .search-icon {
   height: 20px;
-  margin: 0 auto;
+  margin-left: 0px;
+  margin-top: 3px;
 }
 
 .header .right-section {
-  width: auto;
+  width: 180px;
   flex-shrink: 0;
   display: flex;
   justify-content: end;
-  align-items: center;
-  gap: 12px;
 }
 
 .header .orders-link {
@@ -151,8 +94,8 @@
 
   display: flex;
   align-items: center;
-  padding-left: 14px;
-  padding-right: 14px;
+  padding-left: 13px;
+  padding-right: 13px;
 }
 
 .header .orders-text {
@@ -166,12 +109,10 @@
   display: flex;
   align-items: center;
   position: relative;
-  padding-left: 14px;
-  padding-right: 14px;
 }
 
 .header .cart-icon {
-  width: 40px;
+  width: 38px;
 }
 
 .header .cart-text {
@@ -186,8 +127,8 @@
   font-weight: 700;
 
   position: absolute;
-  top: 11px;
-  right: 48px;
+  top: 8.5px;
+  right: 46px;
 
   width: 26px;
   text-align: center;
